@@ -1,0 +1,17 @@
+<div>
+        Total books : {{ ctrl.summary.totalBooks }} <br/>
+        Best book : {{ ctrl.summary.bestBook.title | limitTo:15 | lowercase  }}..
+</div>
+
+<table>
+    <tr>
+        <td>
+            <div ng-repeat="book in ctrl.books">
+                <a ui-sref="summary.detail({id: book.id})" ui-sref-active="active">{{book.title}}</a>
+            </div>
+        </td>
+        <td>
+            <div ui-view>Book detail will come here</div>
+        </td>
+    </tr>
+</table>

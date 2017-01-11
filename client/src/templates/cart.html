@@ -1,0 +1,16 @@
+<table>
+	<tr>
+		<td>Name</td>
+		<td>Price</td>
+		<td>Qty</td>
+	</tr>
+	<tr ng-repeat="item in ctrl.cart.items">
+		<td>{{item.name}}</td>
+		<td>{{item.price}}</td>
+		<td>{{item.qty}}</td>
+	</tr>
+	<tr>
+		<td>Total Price</td>
+		<td colspan="2">{{ctrl.cart.totalPrice}}</td>
+	</tr>
+</table>

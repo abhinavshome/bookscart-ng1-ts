@@ -1,0 +1,66 @@
+<div>
+        <div ng-show="ctrl.books.length==3">not shown as there are 4 books</div>
+        <div>
+            <label>Show:</label>
+            <button ng-class="{active: showBooks==2}" ng-click="showBooks=2">2</button>
+            <button ng-class="{active: showBooks==3}" ng-click="showBooks=3">3</button>
+            <button ng-class="{active: showBooks==100}" ng-click="showBooks=100">All</button>
+        </div>
+        <div>
+            <label>Sort by:</label>
+            <button ng-class="{active: sortOrder=='price'}" ng-click="sortOrder='price'">price &uarr;</button>
+            <button ng-class="{active: sortOrder=='-price'}" ng-click="sortOrder='-price'">price &darr;</button>
+            <button ng-class="{active: sortOrder=='rating'}" ng-click="sortOrder='rating'">rating &uarr;</button>
+        </div>
+        <div>
+            <label>Text: </label>
+            <input type="text" ng-model="filterText">
+        </div>
+        <div>
+            <label>Fields:</label>
+            <input type="text" ng-model="filterObj.title" placeholder="title">
+            <input type="text" ng-model="filterObj.author" placeholder="author">
+        </div>
+        <div>
+            <label>Functions:</label>
+            <button ng-class="{active: filterFun==ctrl.highRated}" ng-click="filterFun=ctrl.highRated">high rated</button>
+            <button ng-class="{active: filterFun==ctrl.cheap}" ng-click="filterFun=ctrl.cheap">cheap</button>
+            <button ng-class="{active: filterFun==ctrl.all}" ng-click="filterFun=ctrl.all">all</button>
+        </div>
+		<div 
+            class="book"
+            ng-repeat="book in ctrl.books 
+                        | limitTo: showBooks 
+                        | orderBy: sortOrder 
+                        | filter: filterText 
+                        | filter: filterObj 
+                        | filter: filterFun" 
+            ng-class="{high: book.rating > 3, low: book.rating <= 3, costly: book.price > 20}"
+            >
+			<div><b>{{ book.title | titlecase:1:'xyz' }}</b>
+            <a ui-sref="bookDetail({id: book.id})">&rarr;</a>
+            </div>
+			<div><i>{{ book.author }}</i></div>
+			<div>{{ book.price | currency:'&#8377;' }}</div>
+			<div>{{ book.rating }}</div>
+			<div>
+                <star-widget 
+                    item="book" 
+                    color="green"
+                    on-star-click="ctrl.logStarClick(index, title)">
+                </star-widget>
+            </div>
+            <div 
+                    ui-slider
+                    min="1"
+                    max="5"
+                    ng-model="book.rating">
+            </div>
+            <div>
+                <button ng-click="ctrl.rateUp(book)">&uarr;</button>
+                <button ng-click="ctrl.rateDown(book)">&darr;</button>
+                <button ng-click="ctrl.addToCart(book)">add to cart</button>
+                <button ng-show="appCtrl.authData.currentUser.role=='admin'" ng-click="ctrl.deleteBook(book)">delete</button>
+            </div>
+		</div>
+	</div>

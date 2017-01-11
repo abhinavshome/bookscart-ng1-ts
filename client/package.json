@@ -1,0 +1,33 @@
+{
+  "name": "bookscart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "watchify src/app.ts -p tsify -o bundle.js -v",
+    "server": "lite-server",
+    "start": "concurrently \"npm run watch\"  \"npm run server\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/angular": "^1.5.16",
+    "@types/lodash": "^4.14.37",
+    "angular": "^1.5.8",
+    "angular-ui-slider": "^0.3.2",
+    "concurrently": "^3.1.0",
+    "jquery": "^3.1.1",
+    "jquery-ui": "^1.10.5",
+    "lite-server": "^2.2.2",
+    "lodash": "^4.16.4",
+    "tsify": "^2.0.2",
+    "typescript": "^2.0.3",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "@types/angular-ui-router": "^1.1.34",
+    "angular-ui-router": "^0.3.1",
+    "angular-ui-slider": "^0.3.2"
+  }
+}

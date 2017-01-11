@@ -1,0 +1,32 @@
+<html ng-app="demoApp">
+
+<head>
+	<title>BooksCart</title>
+    <style>
+        .book {padding: 5px; border-bottom: 1px solid gray;}
+        .high {background-color: lightyellow;}
+        .low { background-color: lightgray; }
+        .costly { color: darkred;}
+        td {background-color: lightgray; padding: 5px;}
+        .ng-cloak {display: none;}
+        label {display: inline-block; width: 70px; margin: 3px 0;}
+        button {background-color: blue; color: white; border: none;}
+        button[disabled] {background-color: lightgray; color: black}
+        button.active {background-color: red;}
+        form span {color: red;}
+        a.active {color: red;}
+        a {color: blue; text-decoration: underline;}
+        .success {color: green; background-color: lightgreen; padding: 5px;}
+        .error {color: red; background-color: pink; padding: 5px;}
+    </style>
+</head>
+
+<body class="ng-cloak">
+    <header></header>
+
+    <div ui-view></div>
+
+	<script src="bundle.js"></script>
+</body>
+
+</html>

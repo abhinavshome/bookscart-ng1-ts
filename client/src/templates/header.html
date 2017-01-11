@@ -1,0 +1,17 @@
+    <h2>BooksCart</h2>
+    <div class="{{hCtrl.alert.type}}" ng-show="!hCtrl.alert.hidden">
+        {{hCtrl.alert.text}}
+        <span ng-click="hCtrl.hideAlert()" ng-show="hCtrl.alert.text">X</span>
+    </div>
+
+    <a ui-sref="home" ui-sref-active="active">Home</a> |
+    <a ui-sref="addBook" ui-sref-active="active">Add a Book</a> |
+    <a ui-sref="cart" ui-sref-active="active">Cart</a> |
+    <a ui-sref="about" ui-sref-active="active">About</a> |
+    <a ui-sref="summary" ui-sref-active="active">Summary</a> |
+    <a ui-sref="sideProducts" ui-sref-active="active">Other Products</a> |
+    <a ui-sref="admin" ui-sref-active="active">Admin</a> |
+    <a ui-sref="login" ui-sref-active="active" ng-show="!hCtrl.authData.token">Login</a> |
+    <span ng-show="hCtrl.authData.currentUser">Welcome {{hCtrl.authData.currentUser.name}}</span> 
+    <a ng-click="hCtrl.logout()" ng-show="!!hCtrl.authData.token">Logout</a>
+    <hr/>

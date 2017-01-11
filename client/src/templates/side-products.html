@@ -1,0 +1,8 @@
+<h2>You might also be interested in-</h2>
+<table>
+    <tr ng-repeat="product in ctrl.sideProducts">
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td><button ng-click="ctrl.addToCart(product)">add to cart</button></td>
+    </tr>
+</table>

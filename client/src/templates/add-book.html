@@ -1,0 +1,31 @@
+        <form name="addBookForm" ng-submit="ctrl.addBook()">
+            <div>
+                <label>Title: </label>
+                <input name="title" type="text" ng-model="ctrl.newBook.title" required minlength="4">
+                <span ng-show="addBookForm.$dirty && addBookForm.title.$error.required">Required!</span>
+                <span ng-show="addBookForm.$dirty && addBookForm.title.$error.minlength">Minimum 4 chars!</span>
+            </div>
+            <div>
+                <label>Author: </label>
+                <input name="author" type="text" ng-model="ctrl.newBook.author" required>
+                <span ng-show="addBookForm.$dirty && addBookForm.author.$error.required">Required!</span>
+            </div>
+            <div>
+                <label>Price: </label>
+                <input name="price" type="number" ng-model="ctrl.newBook.price" required>
+                <span ng-show="addBookForm.$dirty && addBookForm.price.$error.required">Required!</span>
+                <span ng-show="addBookForm.$dirty && addBookForm.price.$error.number">Only number!</span>
+            </div>
+            <div>
+                <label>Rating: </label>
+                <select name="rating" ng-model="ctrl.newBook.rating" required>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <span ng-show="addBookForm.$dirty && addBookForm.rating.$error.required">Required!</span>
+            </div>
+            <button type="submit" ng-disabled="addBookForm.$invalid">Add Book</button>
+        </form>

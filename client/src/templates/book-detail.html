@@ -1,0 +1,5 @@
+<div><b>{{ ctrl.book.title }}</b></div>
+<div><i>{{ ctrl.book.author }}</i></div>
+<div>{{ ctrl.book.price | currency:'&#8377;' }}</div>
+<div>{{ ctrl.book.rating }}</div>
+<rating-bar-widget points="ctrl.book.rating"></rating-bar-widget>
