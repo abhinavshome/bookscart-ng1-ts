@@ -59,23 +59,31 @@ Section11 :: Components
 
 ## Server
 `cd server`
+
 `npm install`
+
 `npm start`
 
 ## Client
 `cd client`
+
 `npm install`
+
 `npm start`
 
 ## Users for testing
 `
 username: user
+
 password: user
+
 role: user
 `
 `
 username: admin
+
 password: admin
+
 role: admin
 `
 
