@@ -50,18 +50,6 @@ Section10 :: Authentication and authorization
 - securing front end routes
 - implementing authorization
 
-- talk about token based authentication
-- try products page and fail
-- implement login, get the token, and access the products page
-- implement logout
-- protect FE routes using run block onAppStart
-- show/hide links using app controller
-- add an alert service
-- aurhorization in FE
-- auth service
-- remove books from catalogue feature
-- change onAppStart to implement authorization
-
 Section11 :: Components
 - component philosophy
 - directive as components
