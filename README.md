@@ -71,19 +71,8 @@ Section11 :: Components
 
 `npm start`
 
-## Users for testing
-`
-username: user
+## Users for testing authorization
+`username: user, password: user,role: user`
 
-password: user
-
-role: user
-`
-`
-username: admin
-
-password: admin
-
-role: admin
-`
+`username: admin, password: admin, role: admin`
 
