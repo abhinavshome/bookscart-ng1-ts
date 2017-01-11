@@ -58,23 +58,24 @@ Section11 :: Components
 # How to run
 
 ## Server
-cd server
-npm install
-npm start
+`cd server`
+`npm install`
+`npm start`
 
 ## Client
-cd client
-npm install
-npm start
+`cd client`
+`npm install`
+`npm start`
 
 ## Users for testing
-
+`
 username: user
 password: user
 role: user
-
+`
+`
 username: admin
 password: admin
 role: admin
-
+`
 
